@@ -2,8 +2,9 @@
 #include <util/delay.h>
 
 void DIO_init(){
- DIO_SetPinDirection('c', 0, 'i');// Buttons pin set as input (PC0)
- DIO_SetPinDirection('c', 5, 'o');// sensor pin set as input (PC1)
+ DIO_SetPinDirection('c', 0, 'i');// 
+ DIO_SetPinDirection('c', 5, 'o');// 
+ DIO_SetPinDirection('c', 1, 'i');//
  
 }
 
