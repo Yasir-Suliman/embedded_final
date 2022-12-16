@@ -10,9 +10,9 @@ void pwm_init(){
   TCCR1B = TCCR1B & ~(1 << WGM12);
 
   // select pre-scaler
-  TCCR1B = TCCR1B |(1 << CS10);
+  TCCR1B = TCCR1B & ~(1 << CS10);
   TCCR1B = TCCR1B & ~(1 << CS11);
-  TCCR1B = TCCR1B & ~(1 << CS12);
+  TCCR1B = TCCR1B |(1 << CS12);
   
   // selecting PB1
   TCCR1A = TCCR1A |(1 << COM1A1);

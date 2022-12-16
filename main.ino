@@ -14,6 +14,7 @@ int main(){
 
   float temp_min = 15.0;
   float temp_max = 30.0;
+  int duty = 8;
 
   while(1){
     int btns = ADC_Read(1);
@@ -22,7 +23,6 @@ int main(){
     char temp_cel_str[5];
     itoa(temp_cel, temp_cel_str, 10);
 
-        
     LCD_String_xy(0, 0, "Temp:");
     LCD_String_xy(0, 6, temp_cel_str);
     LCD_String_xy(0, 9, "C");    
@@ -46,10 +46,14 @@ int main(){
       temp_max = 30.0;
     }
     else if(btns < 885){
-      Serial.println("Btn 7");
+      if(duty > 8){
+      duty = duty - 2;
+      }
     }
     else if(btns < 950){
-      Serial.println("Btn 8");
+      if(duty < 32){
+      duty = duty + 2;
+      }
     }
 
     if(temp_cel >= temp_max | temp_cel <= temp_min){
@@ -58,7 +62,8 @@ int main(){
       DIO_SetPinState('c', 5, 'l');
     }
     
-    set_dutycycle(100);
+    Serial.println(duty);
+    set_dutycycle(duty);
 
     char temp_min_str[5];
     itoa(temp_min, temp_min_str, 10);
