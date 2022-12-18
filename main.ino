@@ -40,10 +40,12 @@ int main(){
       temp_max = temp_max + 1;
     }
     else if(btns < 830){
-      temp_min = 15.0;
+      DIO_SetPinState('b', 2, 'l');
+      Serial.println("low");
     }
     else if(btns < 865){
-      temp_max = 30.0;
+      DIO_SetPinState('b', 2, 'h');
+      Serial.println("high");
     }
     else if(btns < 885){
       if(duty > 8){
@@ -58,6 +60,7 @@ int main(){
 
     if(temp_cel >= temp_max | temp_cel <= temp_min){
       DIO_SetPinState('c', 5, 'h');
+      DIO_SetPinState('b', 2, 'h');      
     } else{
       DIO_SetPinState('c', 5, 'l');
     }

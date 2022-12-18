@@ -2,10 +2,10 @@
 #include <util/delay.h>
 
 void DIO_init(){
- DIO_SetPinDirection('c', 0, 'i');// 
- DIO_SetPinDirection('c', 5, 'o');// 
- DIO_SetPinDirection('c', 1, 'i');//
- 
+  DIO_SetPinDirection('c', 0, 'i');// 
+  DIO_SetPinDirection('c', 5, 'o');// 
+  DIO_SetPinDirection('c', 1, 'i');//
+  DIO_SetPinDirection('b', 2, 'o');//
 }
 
 // set Pin to INPUT or OUTput
