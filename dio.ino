@@ -2,10 +2,10 @@
 #include <util/delay.h>
 
 void DIO_init(){
-  DIO_SetPinDirection('c', 0, 'i');// 
-  DIO_SetPinDirection('c', 5, 'o');// 
-  DIO_SetPinDirection('c', 1, 'i');//
-  DIO_SetPinDirection('b', 2, 'o');//
+  DIO_SetPinDirection('c', 0, 'i');// temp sensor
+  DIO_SetPinDirection('b', 3, 'o');// warning led
+  DIO_SetPinDirection('c', 1, 'i');// buttons
+  DIO_SetPinDirection('b', 2, 'o');// relay trigger pin
 }
 
 // set Pin to INPUT or OUTput
